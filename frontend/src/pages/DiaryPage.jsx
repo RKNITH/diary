@@ -165,14 +165,13 @@ export default function DiaryPage() {
           <button
             key={tab.key}
             onClick={() => setFilter(tab.key)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${
-              filter === tab.key
-                ? tab.key === 'done' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${filter === tab.key
+              ? tab.key === 'done' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
                 : tab.key === 'due' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                : tab.key === 'pending' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-                : 'bg-white/10 text-slate-200 border border-white/20'
-                : 'text-slate-500 hover:text-slate-300 hover:bg-white/5'
-            }`}
+                  : tab.key === 'pending' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
+                    : 'bg-white/10 text-slate-200 border border-white/20'
+              : 'text-slate-500 hover:text-slate-300 hover:bg-white/5'
+              }`}
           >
             {tab.label}
             <span className="font-mono bg-white/10 px-1.5 py-0.5 rounded-md">{tab.count}</span>
@@ -251,14 +250,14 @@ export default function DiaryPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 sm:hidden"
+          className="fixed bottom-36 right-1 -translate-x-1/2 z-40 sm:hidden"
         >
           <button
             onClick={handleSave}
             disabled={saving}
-            className="btn-primary flex items-center gap-2 shadow-2xl shadow-emerald-500/30 px-6"
+            className="btn-primary flex items-center gap-1 shadow-2xl shadow-emerald-500/30 px-2 py-2 rounded-full text-sm"
           >
-            {saving ? 'Saving...' : '💾 Save All Changes'}
+            {saving ? 'Saving...' : '💾 Save '}
           </button>
         </motion.div>
       )}
